@@ -26,6 +26,8 @@
         <button class="tab-btn active" onclick="openTab(event, 'subnet')">Subnet Calculator</button>
         <button class="tab-btn" onclick="openTab(event, 'config')">Config Generator</button>
         <button class="tab-btn" onclick="openTab(event, 'ping')">Ping Dashboard</button>
+        <button class="tab-btn" onclick="openTab(event, 'diagnostic')">Internet Doctor</button>
+
     </div>
 
     <div class="content">
@@ -60,6 +62,14 @@
                 <div class="device"><span class="status offline"></span> Access Point Lantai 2 (192.168.1.50)</div>
             </div>
         </div>
+        <!-- TAB 4: INTERNET DIAGNOSTIC -->
+<div id="diagnostic" class="tab-content">
+    <h2>Internet Doctor (Link Diagnostic)</h2>
+    <p>Deteksi otomatis sumber masalah gangguan koneksi internet Anda.</p>
+    <button onclick="cekKoneksiDetail()" style="background-color: #e67e22;">Mulai Analisis Jaringan</button>
+    <div class="result" id="hasilDiagnostik">Klik tombol untuk mulai mendiagnosis jaringan...</div>
+</div>
+
     </div>
 
     <script src="script.js"></script>
