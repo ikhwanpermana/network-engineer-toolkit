@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<<h1>Aplikasi Pertama Saya Berhasil!</h1>
+>
+    
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Engineer Toolkit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <h2>NetEng Tools</h2>
+        <button class="tab-btn active" onclick="openTab(event, 'subnet')">Subnet Calculator</button>
+        <button class="tab-btn" onclick="openTab(event, 'config')">Config Generator</button>
+        <button class="tab-btn" onclick="openTab(event, 'ping')">Ping Dashboard</button>
+    </div>
+
+    <div class="content">
+        <!-- TAB 1: SUBNET CALCULATOR & IP CLASS DETECTOR -->
+        <div id="subnet" class="tab-content active">
+            <h2>Subnet & IP Class Calculator</h2>
+            <p>Masukkan IP Address dan CIDR prefix untuk analisis jaringan.</p>
+            <input type="text" id="ipOctet" placeholder="Contoh IP: 192.168.1.1" style="width: 180px;">
+            <input type="number" id="cidr" placeholder="/24" min="1" max="32" style="width: 80px;">
+            <button onclick="hitungSubnet()">Kalkulasi</button>
+            <div class="result" id="hasilSubnet">Hasil analisis akan muncul di sini...</div>
+        </div>
+
+        <!-- TAB 2: CONFIG GENERATOR -->
+        <div id="config" class="tab-content">
+            <h2>Cisco Config Generator</h2>
+            <p>Buat skrip konfigurasi dasar interface Cisco secara instan.</p>
+            <input type="text" id="intName" placeholder="Nama Interface (Contoh: Gi0/0)"><br><br>
+            <input type="text" id="ipAddress" placeholder="IP Address (Contoh: 192.168.1.1)"><br><br>
+            <input type="text" id="netmask" placeholder="Subnet Mask (Contoh: 255.255.255.0)"><br><br>
+            <button onclick="generateConfig()">Generate Script</button>
+            <pre class="result" id="hasilConfig">Skrip akan muncul di sini...</pre>
+        </div>
+
+        <!-- TAB 3: PING DASHBOARD -->
+        <div id="ping" class="tab-content">
+            <h2>Device Ping Dashboard (Simulasi Jaringan)</h2>
+            <p>Status perangkat jaringan saat ini:</p>
+            <div class="device-list">
+                <div class="device"><span class="status online"></span> Core Router (192.168.1.1)</div>
+                <div class="device"><span class="status online"></span> Distribution Switch (192.168.1.2)</div>
+                <div class="device"><span class="status offline"></span> Access Point Lantai 2 (192.168.1.50)</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
